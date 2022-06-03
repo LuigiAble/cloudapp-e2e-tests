@@ -1,1 +1,19 @@
-{}
+{
+  "baseUrl": "https://share.getcloudapp.com/",
+  "retries": 3,
+  "integrationFolder": "cypress/e2e",
+  "videoUploadOnPasses": false,
+  "watchForFileChanges": false,
+  "viewportHeight": 1080,
+  "viewportWidth": 1920,
+  "chromeWebSecurity": false,
+  "defaultCommandTimeout": 30000,
+  "experimentalSessionAndOrigin": true,
+  "scrollBehavior": "center",
+  "login_url": "/login",
+  "signup_url": "/signup",
+  "dashboard_url": "/dashboard",
+  "env": {
+    "password": "rbc-jfj7MWK1bez-tdk"
+  }
+}

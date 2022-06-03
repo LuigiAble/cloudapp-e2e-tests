@@ -15,8 +15,20 @@
 /**
  * @type {Cypress.PluginConfig}
  */
-// eslint-disable-next-line no-unused-vars
-module.exports = (on, config) => {
-  // `on` is used to hook into various events Cypress emits
-  // `config` is the resolved Cypress config
-}
+const Fingerprint2 = require("fingerprintjs2");
+
+module.exports = (on, _config) => {
+  on("task", {
+    async getFingerprint() {
+      return new Promise((resolve) => {
+        Fingerprint2.get((result) => {
+          const token = Fingerprint2.x64hash128(
+            result.map((pair) => pair.value).join(),
+            88
+          );
+          resolve(token);
+        });
+      });
+    },
+  });
+};
