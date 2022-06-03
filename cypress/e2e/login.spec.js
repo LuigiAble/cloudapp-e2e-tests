@@ -57,7 +57,6 @@ describe("Navigate to CloudApp Login Page", () => {
   describe("Log out from Dashboard Page", () => {
     it("should log out successfully", () => {
       cy.login(email, password);
-      cy.visit("/dashboard");
       DasboardPage.clickOnDashboardMenu();
       DasboardPage.clickOnSignOut();
 

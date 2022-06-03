@@ -27,6 +27,16 @@ class DashboardPage {
   clickOnCloseModal() {
     this.elements.closeIcon().should("be.visible").click();
   }
+
+  closeModal() {
+    cy.get("body").then(($body) => {
+      if ($body.find(".modal-dialog-centered .modal-content").length) {
+        cy.get(".modal-dialog-centered header").type("{esc}");
+      } else {
+        assert.isOk("Everything", "Everything is OK");
+      }
+    });
+  }
 }
 
 module.exports = new DashboardPage();

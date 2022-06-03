@@ -21,9 +21,7 @@ describe("Go to Settings and update user Avatar", () => {
       path: "/accounts/*",
       method: "POST",
     }).as("uploadUserAvatar");
-
     cy.login(email, password);
-    cy.visit("/dashboard");
   });
 
   describe("Update user avatar using an image with valid dimentions", () => {

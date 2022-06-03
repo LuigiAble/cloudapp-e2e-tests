@@ -9,6 +9,9 @@ Cypress.Commands.add("login", (email, password) => {
     LoginPage.clickOnSubmit();
     cy.url().should("contain", "/dashboard");
   });
+
+  cy.visit("/dashboard");
+  DashboardPage.closeModal(); // Close modal in case it is displayed
 });
 
 Cypress.Commands.add("signUp", (email, password) => {
