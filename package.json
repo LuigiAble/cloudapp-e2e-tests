@@ -1,0 +1,22 @@
+{
+  "name": "cloudapp-challenge",
+  "version": "1.0.0",
+  "description": "Test for CloudApp website",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
+  },
+  "author": "Luigi Aguirre",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^9.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LuigiAble/cloudapp-challenge/"
+  },
+  "bugs": {
+    "url": "https://github.com/LuigiAble/cloudapp-challenge/issues"
+  }
+}
