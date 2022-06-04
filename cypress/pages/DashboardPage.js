@@ -1,15 +1,12 @@
 class DashboardPage {
   elements = {
     welcomeMessage: () => cy.contains(".alert-message", "Welcome back!"),
-    subHeadingMessage: () =>
-      cy.contains(
-        "h6",
-        " Start creating and sharing content today with CloudApp"
-      ),
     mainMenu: () => cy.get("#main-menu"),
+    emailDropdownItem: (email) => cy.contains(".dropdown-item", email),
     signOutLink: () => cy.get("a[data-testid=dropdown-link-sign_out]"),
     settingsLink: () => cy.get("a[data-testid=dropdown-link-settings]"),
     sideBarSection: () => cy.get("[data-testid=dashboard-sidebar]"),
+    modalHeader: () => cy.get(".modal-dialog-centered header"),
   };
 
   clickOnDashboardMenu() {
@@ -28,12 +25,13 @@ class DashboardPage {
     this.elements.closeIcon().should("be.visible").click();
   }
 
+  // Close modal in case it is displayed
   closeModal() {
     cy.get("body").then(($body) => {
       if ($body.find(".modal-dialog-centered .modal-content").length) {
-        cy.get(".modal-dialog-centered header").type("{esc}");
+        this.elements.modalHeader().should("be.visible").type("{esc}");
       } else {
-        assert.isOk("Everything", "Everything is OK");
+        assert.isOk("No modal displayed");
       }
     });
   }

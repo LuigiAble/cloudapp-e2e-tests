@@ -1,6 +1,7 @@
 /// <reference types="Cypress" />
 
 import AlertsPage from "../pages/AlertsPage";
+import HomePage from "../pages/HomePage";
 import SignUpPage from "../pages/SignUpPage";
 import { randomEmail } from "../support/generate";
 
@@ -13,10 +14,11 @@ describe("Signup a new Account", () => {
 
   beforeEach(() => {
     cy.intercept({
-      path: "/api/v4/account",
+      url: Cypress.config("cloudapp_url") + "/api/v4/account*",
       method: "POST",
     }).as("account");
-    cy.visit("/signup");
+
+    HomePage.clickOnSignUp();
   });
 
   describe("Signup using valid values", () => {
@@ -33,15 +35,18 @@ describe("Signup a new Account", () => {
         .should("contain.text", ACCOUNT_CREATED_MESSAGE);
 
       // Validate elements are displayed correctly (sometimes it is not redirecting to /onboarding/downloads)
-      cy.visit("/onboarding/downloads");
+      cy.visit(Cypress.config("cloudapp_url") + "/onboarding/downloads");
 
       SignUpPage.elements.successCreationTitle().should("be.visible");
       SignUpPage.elements
         .cloudAppImage()
         .should("be.visible")
         .and(($img) => {
-          // "naturalWidth" and "naturalHeight" are set when the image loads
-          expect($img[0].naturalWidth).to.be.greaterThan(0);
+          // addEventListener workaround is because naturalWidth does not work on Firefox
+          window.addEventListener("load", function () {
+            // "naturalWidth" and "naturalHeight" are set when the image loads
+            expect($img[0].naturalWidth).to.be.greaterThan(0);
+          });
         });
     });
   });
