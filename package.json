@@ -10,7 +10,8 @@
   "author": "Luigi Aguirre",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^9.7.0"
+    "cypress": "^9.7.0",
+    "fingerprintjs2": "^2.1.4"
   },
   "repository": {
     "type": "git",
