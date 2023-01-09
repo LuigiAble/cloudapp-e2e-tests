@@ -1,4 +1,4 @@
-# CloudApp take-home challenge
+# Cypress E2E Testing
 
 ## Requirements 📚
 
