@@ -1,4 +1,5 @@
 # Cypress E2E Testing
+[![End-to-end tests](https://github.com/LuigiAble/cloudapp-e2e-tests/actions/workflows/main.yml/badge.svg?branch=cicd%2Fadd-gh-workflow&event=push)](https://github.com/LuigiAble/cloudapp-e2e-tests/actions/workflows/main.yml)
 
 ## Requirements 📚
 
