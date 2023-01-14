@@ -4,9 +4,9 @@
   "description": "Test for CloudApp website",
   "main": "index.js",
   "scripts": {
-    "cypress:open": "cypress open",
-    "cypress:run": "cypress run",
-    "cy:open:firefox": "cypress run --browser firefox --headless"
+    "cy:open": "cy open",
+    "cy:e2e:chrome": "cypress run --browser chrome",
+    "cy:e2e:firefox": "cypress run --browser firefox"
   },
   "author": "Luigi Aguirre",
   "license": "ISC",
