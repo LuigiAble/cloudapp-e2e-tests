@@ -1,12 +1,12 @@
 class HomePage {
   elements = {
-    loginLink: () => cy.contains(".top-level-link", "Log in"),
+    loginLink: () => cy.get("#menu-1-e49f70d a"),
     signUpLink: () => cy.contains("a[role=button]", "Sign Up Free"),
   };
 
   clickOnLogin() {
     cy.visit("/");
-    this.elements.loginLink().should("be.visible").click();
+    this.elements.loginLink().eq(2).click();
   }
 
   clickOnSignUp() {

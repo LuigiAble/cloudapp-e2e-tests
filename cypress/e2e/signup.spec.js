@@ -18,7 +18,8 @@ describe("Signup a new Account", () => {
       method: "POST",
     }).as("account");
 
-    HomePage.clickOnSignUp();
+    // HomePage.clickOnSignUp();
+    cy.visit("/signup");
   });
 
   describe("Signup using valid values", () => {
