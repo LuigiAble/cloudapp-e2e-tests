@@ -13,5 +13,13 @@
   "cloudapp_url": "https://share.getcloudapp.com",
   "env": {
     "password": "rbc-jfj7MWK1bez-tdk"
+  },
+  "reporter": "cypress-mochawesome-reporter",
+
+  "reporterOptions": {
+    "embeddedScreenshots": true,
+    "charts": true,
+    "reportPageTitle": "Cypress Inline Report",
+    "inlineAssets": true
   }
 }

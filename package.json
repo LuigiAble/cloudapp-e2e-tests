@@ -4,13 +4,16 @@
   "description": "Test for CloudApp website",
   "main": "index.js",
   "scripts": {
-    "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "cy:open": "cy open",
+    "cy:e2e:chrome": "cypress run --browser chrome ",
+    "ui-regression": "cypress run --browser chrome --spec cypress/e2e/settings.spec.js",
+    "cy:e2e:firefox": "cypress run --browser firefox"
   },
   "author": "Luigi Aguirre",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^9.7.0",
+    "cypress-mochawesome-reporter": "^3.2.3",
     "fingerprintjs2": "^2.1.4"
   },
   "repository": {
